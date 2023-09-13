@@ -1,8 +1,8 @@
-# Zeek-Parser-CIFS-COM
+# Zeek-Parser-MYDHCP
 
 ## Overview
 
-Zeek-Parser-CIFS-COM is a Zeek plug-in that can analyze communication using CIFS_B.
+Zeek-Parser-MYDHCP is a Zeek plug-in that can analyze communication using MYDHCP.
 
 ## Usage
 
