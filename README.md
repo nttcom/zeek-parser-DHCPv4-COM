@@ -50,7 +50,7 @@ spicyc v1.5.0 (d0bc6053)
 ```
 ~$ tail /usr/local/zeek/share/zeek/site/local.zeek
 ...省略...
-@load MYDHCP
+@load DHCPV4
 ```
 
 本プラグインを使うことで `mydhcp.log` が生成されます。
