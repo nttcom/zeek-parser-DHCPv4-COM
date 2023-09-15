@@ -1,10 +1,10 @@
-# Zeek-Parser-MYDHCP
+# Zeek-Parser-DHCPv4-COM
 
 English is [here](https://github.com/nttcom/zeek-parser-MYDHCP/blob/main/README_en.md)
 
 ## 概要
 
-Zeek-Parser-MYDHCPとはMYDHCPを解析できるZeekプラグインです。
+Zeek-Parser-MYDHCPとはDHCPv4（Dynamic Host Configuration Protocol for IPv4）を解析できるZeekプラグインです。
 
 ## 使い方
 
@@ -66,7 +66,7 @@ spicyc v1.5.0 (d0bc6053)
 | --- | --- | --- |
 | ts | time | 通信した時のタイムスタンプ |
 | SrcIP | addr | 送信元IPアドレス  |
-| SrcMAC | string | 送信元macアドレス |
+| SrcMAC | string | 送信元MACアドレス |
 | Hostname | string | ホストの名前 |
 | ParameterList | vector[count] | DHCPクライアントとDHCPサーバー間でやり取りされるメッセージ内の設定情報 |
 | ClassId | string | デバイスのタイプやバージョン情報 |
@@ -87,7 +87,7 @@ spicyc v1.5.0 (d0bc6053)
 #close	2023-09-13-05-55-55
 ```
 
-## 関連ソフトウエア
+## 関連ソフトウェア
 
 本プラグインは[OsecT](https://github.com/nttcom/OsecT)で利用されています。
 
