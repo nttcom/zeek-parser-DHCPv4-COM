@@ -28,20 +28,20 @@ spicyc v1.5.0 (d0bc6053)
 
 Use `git clone` to get a copy of this repository to your local environment.
 ```
-~$ git clone https://github.com/nttcom/zeek-parser-MYDHCP.git
+~$ git clone https://github.com/nttcom/zeek-parser-DHCPv4-COM.git
 ```
 
 Compile source code and copy the object files to the following path.
 ```
-~$ cd ~/zeek-parser-MYDHCP/analyzer
-~$ spicyz -o mydhcp.hlto mydhcp.spicy zeek_mydhcp.spicy mydhcp.evt
-# mydhcp.hlt will be generated
-~$ cp mydhcp.hlto /usr/local/zeek/lib/zeek-spicy/modules/
+~$ cd ~/zeek-parser-DHCPv4-COM/analyzer
+~$ spicyz -o dhcpv4.hlto dhcpv4.spicy zeek_dhcpv4.spicy dhcpv4.evt
+# dhcpv4.hlto will be generated
+~$ cp dhcpv4.hlto /usr/local/zeek/lib/zeek-spicy/modules/
 ```
 
 Then, copy the zeek file to the following paths.
 ```
-~$ cd ~/zeek-parser-MYDHCP/scripts/
+~$ cd ~/zeek-parser-DHCPv4-COM/scripts/
 ~$ cp main.zeek /usr/local/zeek/share/zeek/site/
 ```
 
@@ -49,12 +49,12 @@ Finally, import the Zeek plugin.
 ```
 ~$ tail /usr/local/zeek/share/zeek/site/local.zeek
 ... Omit ...
-@load MYDHCP
+@load DHCPV4
 ```
 
 This plug-in generates a `mydhcp.log` by the command below:
 ```
-~$ cd ~/zeek-parser-MYDHCP/testing/Traces
+~$ cd ~/zeek-parser-DHCPv4-COM/testing/Traces
 ~$ zeek -Cr test.pcap /usr/local/zeek/share/zeek/site/main.zeek
 ```
 
