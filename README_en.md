@@ -1,8 +1,8 @@
-# Zeek-Parser-MYDHCP
+# Zeek-Parser-DHCPv4-COM
 
 ## Overview
 
-Zeek-Parser-MYDHCP is a Zeek plug-in that can analyze communication using MYDHCP.
+Zeek-Parser-DHCPv4-COM is a Zeek plug-in that can analyze communication using DHCP4（Dynamic Host Configuration Protocol for IPv4）.
 
 ## Usage
 
