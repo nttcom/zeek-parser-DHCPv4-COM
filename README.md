@@ -4,7 +4,7 @@ English is [here](https://github.com/nttcom/zeek-parser-MYDHCP/blob/main/README_
 
 ## 概要
 
-Zeek-Parser-MYDHCPとはDHCPv4（Dynamic Host Configuration Protocol for IPv4）を解析できるZeekプラグインです。
+Zeek-Parser-DHCPv4-COMとはDHCPv4（Dynamic Host Configuration Protocol for IPv4）を解析できるZeekプラグインです。
 
 ## 使い方
 
