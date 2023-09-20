@@ -16,7 +16,7 @@ features = spicy-protocol-analyzer
 
 [template_vars]
 name = zeek-parser-DHCPv4-COM
-analyzer = DHCPV4
+analyzer = MYDHCP
 protocol = UDP
 unit_orig = Packet
 unit_resp = Packet

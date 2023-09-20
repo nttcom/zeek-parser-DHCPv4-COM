@@ -1,8 +1,8 @@
 # TODO: Use this file to optionally declare signatures activating your analyzer
 # (instead of, or in addition to, using a well-known port).
 #
-# signature dpd_dhcpv4 {
+# signature dpd_mydhcp {
 #     ip-proto == udp
 #     payload /^\x11\x22\x33\x44/ # TODO: Detect your protocol here.
-#     enable "spicy_DHCPV4"
+#     enable "spicy_MYDHCP"
 # }

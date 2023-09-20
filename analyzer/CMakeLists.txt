@@ -1,6 +1,6 @@
 spicy_add_analyzer(
-    NAME DHCPV4
+    NAME MYDHCP
     PACKAGE_NAME zeek-parser-DHCPv4-COM
-    SOURCES dhcpv4.spicy dhcpv4.evt zeek_dhcpv4.spicy
+    SOURCES mydhcp.spicy mydhcp.evt zeek_mydhcp.spicy
     SCRIPTS __load__.zeek main.zeek dpd.sig
 )
