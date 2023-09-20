@@ -95,7 +95,7 @@ spicyc v1.5.0 (d0bc6053)
 
 * [spicy-dhcp](https://github.com/zeek/spicy-dhcp) - Zeek用のオリジナルなSpicyに基づいたDHCPプロトコルアナライザ。
 
-## ログの差分(MYDHCPとZeekオリジナル)
+### ログの差分(MYDHCPとZeekオリジナル)
 
 | フィールド | MYDHCP | Zeekオリジナル |
 | --- | --- | --- |
