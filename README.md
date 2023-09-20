@@ -1,10 +1,10 @@
 # Zeek-Parser-DHCPv4-COM
 
-English is [here](https://github.com/nttcom/zeek-parser-MYDHCP/blob/main/README_en.md)
+English is [here](https://github.com/nttcom/zeek-parser-DHCPv4-COM/blob/main/README_en.md)
 
 ## 概要
 
-Zeek-Parser-DHCPv4-COMとはDHCPv4(Dynamic Host Configuration Protocol for IPv4)を解析できるZeekプラグインです。
+Zeek-Parser-DHCPv4-COMとはzeekの元のDHCPv4(Dynamic Host Configuration Protocol for IPv4)プラグインを改造し、OsecTに適応したプラグインです。
 
 ## 使い方
 
@@ -35,9 +35,9 @@ spicyc v1.5.0 (d0bc6053)
 ソースコードをコンパイルして、オブジェクトファイルを以下のパスにコピーします。
 ```
 ~$ cd ~/zeek-parser-DHCPv4-COM/analyzer
-~$ spicyz -o dhcpv4.hlto dhcpv4.spicy zeek_dhcpv4.spicy dhcpv4.evt
-# dhcpv4.hltoが生成されます
-~$ cp dhcpv4.hlto /usr/local/zeek/lib/zeek-spicy/modules/
+~$ spicyz -o mydhcp.hlto mydhcp.spicy zeek_mydhcp.spicy mydhcp.evt
+# mydhcp.hltoが生成されます
+~$ cp mydhcp.hlto /usr/local/zeek/lib/zeek-spicy/modules/
 ```
 
 同様にZeekファイルを以下のパスにコピーします。
@@ -50,7 +50,7 @@ spicyc v1.5.0 (d0bc6053)
 ```
 ~$ tail /usr/local/zeek/share/zeek/site/local.zeek
 ...省略...
-@load DHCPV4
+@load MYDHCP
 ```
 
 本プラグインを使うことで `mydhcp.log` が生成されます。
@@ -91,3 +91,27 @@ spicyc v1.5.0 (d0bc6053)
 
 本プラグインは[OsecT](https://github.com/nttcom/OsecT)で利用されています。
 
+## 参考文献
+
+* [spicy-dhcp](https://github.com/zeek/spicy-dhcp) - Zeek用のオリジナルなSpicyに基づいたDHCPプロトコルアナライザ。
+
+## ログの差分(MYDHCPとZeekオリジナル)
+
+| フィールド | MYDHCP | Zeekオリジナル |
+| --- | --- | --- |
+| ts | ◯ | ◯ |
+| SrcIP | ◯ |  ◯ (client_addr) |
+| SrcMAC | ◯ | ◯ (mac) |
+| Hostname | ◯ | ◯ (host_name) |
+| ParameterList | ◯ | x |
+| ClassId | ◯ | x |
+| uids | x | ◯ |
+| server_addr | x | ◯ |
+| client_fqdn | x | ◯ |
+| domain | x | ◯ |
+| requested_addr | x | ◯ |
+| assigned_addr | x | ◯ |
+| lease_time | x | ◯ |
+| client_message | x | ◯ |
+| msg_types | x | ◯ |
+| duration | x | ◯ |
