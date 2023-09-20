@@ -97,21 +97,22 @@ spicyc v1.5.0 (d0bc6053)
 
 ### ログの差分(MYDHCPとZeekオリジナル)
 
-| フィールド | MYDHCP | Zeekオリジナル |
-| --- | --- | --- |
+| フィールド | MYDHCP | Zeekオリジナル | 説明 |
+| --- | --- | --- | --- |
 | ts | ◯ | ◯ |
 | SrcIP | ◯ |  ◯ (client_addr) |
 | SrcMAC | ◯ | ◯ (mac) |
 | Hostname | ◯ | ◯ (host_name) |
 | ParameterList | ◯ | x |
 | ClassId | ◯ | x |
-| uids | x | ◯ |
-| server_addr | x | ◯ |
-| client_fqdn | x | ◯ |
-| domain | x | ◯ |
-| requested_addr | x | ◯ |
-| assigned_addr | x | ◯ |
-| lease_time | x | ◯ |
-| client_message | x | ◯ |
-| msg_types | x | ◯ |
-| duration | x | ◯ |
+| uids | x | ◯ | 通信に付けられた一意の識別子 |
+| server_addr | x | ◯ | DHCPサーバのIPアドレス |
+| client_fqdn | x | ◯ | DHCPクライアントの完全修飾ドメイン名 |
+| domain | x | ◯ | DHCPクライアントが所属するドメイン名 |
+| requested_addr | x | ◯ | DHCPクライアントが要求したIPアドレス |
+| assigned_addr | x | ◯ | DHCPサーバによってクライアントに割り当てられたIPアドレス|
+| lease_time | x | ◯ | DHCPクライアントに割り当てられたIPアドレスのリース時間 |
+| client_message | x | ◯ | DHCPクライアントのメッセージ |
+| server_message | x | ◯ | DHCPサーバのメッセージ |
+| msg_types | x | ◯ | メッセージのタイプ |
+| duration | x | ◯ | 通信の処理時間 |
