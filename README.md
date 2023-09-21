@@ -4,7 +4,7 @@ English is [here](https://github.com/nttcom/zeek-parser-DHCPv4-COM/blob/main/REA
 
 ## 概要
 
-Zeek-Parser-DHCPv4-COMとはZeekオリジナルのDHCPv4(Dynamic Host Configuration Protocol for IPv4)プラグインを参考し、OsecTに適応したプラグインです。
+Zeek-Parser-DHCPv4-COMとはZeekオリジナルのDHCPv4(Dynamic Host Configuration Protocol for IPv4)プラグインを参考にして作成したプラグインです。
 
 ## 使い方
 
@@ -115,4 +115,4 @@ spicyc v1.5.0 (d0bc6053)
 | client_message | x | ◯ | DHCPクライアントのメッセージ |
 | server_message | x | ◯ | DHCPサーバのメッセージ |
 | msg_types | x | ◯ | メッセージのタイプ |
-| duration | x | ◯ | 通信の処理時間 |
+| duration | x | ◯ | 通信の継続時間 |
