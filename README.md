@@ -68,7 +68,7 @@ spicyc v1.5.0 (d0bc6053)
 | SrcIP | addr | 送信元IPアドレス |
 | SrcMAC | string | 送信元MACアドレス |
 | Hostname | string | ホストの名前 |
-| ParameterList | vector[count] | DHCPクライアントとDHCPサーバー間でやり取りされるメッセージ内の設定情報 |
+| ParameterList | vector[count] | DHCPクライアントとDHCPサーバ間でやり取りされるメッセージ内の設定情報 |
 | ClassId | string | デバイスのタイプやバージョン情報 |
 
 
@@ -103,7 +103,7 @@ spicyc v1.5.0 (d0bc6053)
 | SrcIP | ◯ |  ◯ (client_addr) | 送信元IPアドレス |
 | SrcMAC | ◯ | ◯ (mac) | 送信元MACアドレス |
 | Hostname | ◯ | ◯ (host_name) | ホストの名前 |
-| ParameterList | ◯ | x | DHCPクライアントとDHCPサーバー間でやり取りされるメッセージ内の設定情報 |
+| ParameterList | ◯ | x | DHCPクライアントとDHCPサーバ間でやり取りされるメッセージ内の設定情報 |
 | ClassId | ◯ | x | デバイスのタイプやバージョン情報 |
 | uids | x | ◯ | 通信に付けられた一意の識別子 |
 | server_addr | x | ◯ | DHCPサーバのIPアドレス |
