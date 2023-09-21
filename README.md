@@ -4,7 +4,7 @@ English is [here](https://github.com/nttcom/zeek-parser-DHCPv4-COM/blob/main/REA
 
 ## 概要
 
-Zeek-Parser-DHCPv4-COMとはzeekの元のDHCPv4(Dynamic Host Configuration Protocol for IPv4)プラグインを改造し、OsecTに適応したプラグインです。
+Zeek-Parser-DHCPv4-COMとはZeekオリジナルのDHCPv4(Dynamic Host Configuration Protocol for IPv4)プラグインを参考にして作成したプラグインです。
 
 ## 使い方
 
@@ -43,7 +43,7 @@ spicyc v1.5.0 (d0bc6053)
 同様にZeekファイルを以下のパスにコピーします。
 ```
 ~$ cd ~/zeek-parser-DHCPv4-COM/scripts/
-~$ cp main.zeek /usr/local/zeek/share/zeek/site/
+~$ cp main.zeek /usr/local/zeek/share/zeek/site/MYDHCP.zeek
 ```
 
 最後にZeekプラグインをインポートします。
@@ -56,7 +56,7 @@ spicyc v1.5.0 (d0bc6053)
 本プラグインを使うことで `mydhcp.log` が生成されます。
 ```
 ~$ cd ~/zeek-parser-DHCPv4-COM/testing/Traces
-~$ zeek -Cr test.pcap /usr/local/zeek/share/zeek/site/main.zeek
+~$ zeek -Cr test.pcap /usr/local/zeek/share/zeek/site/MYDHCP.zeek
 ```
 
 ## ログのタイプと説明
@@ -65,10 +65,10 @@ spicyc v1.5.0 (d0bc6053)
 | フィールド | タイプ | 説明 |
 | --- | --- | --- |
 | ts | time | 通信した時のタイムスタンプ |
-| SrcIP | addr | 送信元IPアドレス  |
+| SrcIP | addr | 送信元IPアドレス |
 | SrcMAC | string | 送信元MACアドレス |
 | Hostname | string | ホストの名前 |
-| ParameterList | vector[count] | DHCPクライアントとDHCPサーバー間でやり取りされるメッセージ内の設定情報 |
+| ParameterList | vector[count] | DHCPクライアントとDHCPサーバ間でやり取りされるメッセージ内の設定情報 |
 | ClassId | string | デバイスのタイプやバージョン情報 |
 
 
@@ -91,20 +91,20 @@ spicyc v1.5.0 (d0bc6053)
 
 本プラグインは[OsecT](https://github.com/nttcom/OsecT)で利用されています。
 
-## 参考文献
+## 関連リポジトリ
 
-* [spicy-dhcp](https://github.com/zeek/spicy-dhcp) - Zeek用のオリジナルなSpicyに基づいたDHCPプロトコルアナライザ。
+* [spicy-dhcp](https://github.com/zeek/spicy-dhcp) - ZeekオリジナルのSpicyに基づいたDHCPv4(Dynamic Host Configuration Protocol for IPv4)プラグインです。
 
-### ログの差分(MYDHCPとZeekオリジナル)
+### ログの差分(DHCPv4-COMとZeekオリジナル)
 
-| フィールド | MYDHCP | Zeekオリジナル | 説明 |
+| フィールド | DHCPv4-COM | Zeekオリジナル | 説明 |
 | --- | --- | --- | --- |
-| ts | ◯ | ◯ |
-| SrcIP | ◯ |  ◯ (client_addr) |
-| SrcMAC | ◯ | ◯ (mac) |
-| Hostname | ◯ | ◯ (host_name) |
-| ParameterList | ◯ | x |
-| ClassId | ◯ | x |
+| ts | ◯ | ◯ | 通信した時のタイムスタンプ |
+| SrcIP | ◯ |  ◯ (client_addr) | 送信元IPアドレス |
+| SrcMAC | ◯ | ◯ (mac) | 送信元MACアドレス |
+| Hostname | ◯ | ◯ (host_name) | ホストの名前 |
+| ParameterList | ◯ | x | DHCPクライアントとDHCPサーバ間でやり取りされるメッセージ内の設定情報 |
+| ClassId | ◯ | x | デバイスのタイプやバージョン情報 |
 | uids | x | ◯ | 通信に付けられた一意の識別子 |
 | server_addr | x | ◯ | DHCPサーバのIPアドレス |
 | client_fqdn | x | ◯ | DHCPクライアントの完全修飾ドメイン名 |
@@ -115,4 +115,4 @@ spicyc v1.5.0 (d0bc6053)
 | client_message | x | ◯ | DHCPクライアントのメッセージ |
 | server_message | x | ◯ | DHCPサーバのメッセージ |
 | msg_types | x | ◯ | メッセージのタイプ |
-| duration | x | ◯ | 通信の処理時間 |
+| duration | x | ◯ | 通信の継続時間 |
