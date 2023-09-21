@@ -2,7 +2,7 @@
 
 ## Overview
 
-Zeek-Parser-DHCPv4-COM is a Zeek plug-in that can analyze communication using DHCP4（Dynamic Host Configuration Protocol for IPv4）.
+Zeek-Parser-DHCPv4-COM is a plug-in created by referring to Zeek's original DHCPv4 (Dynamic Host Configuration Protocol for IPv4) plug-in.
 
 ## Usage
 
@@ -42,7 +42,7 @@ Compile source code and copy the object files to the following path.
 Then, copy the zeek file to the following paths.
 ```
 ~$ cd ~/zeek-parser-DHCPv4-COM/scripts/
-~$ cp main.zeek /usr/local/zeek/share/zeek/site/
+~$ cp main.zeek /usr/local/zeek/share/zeek/site/MYDHCP.zeek
 ```
 
 Finally, import the Zeek plugin.
@@ -55,7 +55,7 @@ Finally, import the Zeek plugin.
 This plug-in generates a `mydhcp.log` by the command below:
 ```
 ~$ cd ~/zeek-parser-DHCPv4-COM/testing/Traces
-~$ zeek -Cr test.pcap /usr/local/zeek/share/zeek/site/main.zeek
+~$ zeek -Cr test.pcap /usr/local/zeek/share/zeek/site/MYDHCP.zeek
 ```
 
 ## Log type and description
@@ -64,7 +64,7 @@ This plug-in monitors all functions of mydhcp and outputs them as `mydhcp.log`.
 | Field | Type | Description |
 | --- | --- | --- |
 | ts | time | timestamp of the communication |
-| SrcIP | addr | source IP address  |
+| SrcIP | addr | source IP address |
 | SrcMAC | string | source MAC address |
 | Hostname | string | name of the host |
 | ParameterList | vector[count] | configuration information in messages exchanged between DHCP client and DHCP server |
@@ -89,4 +89,28 @@ An example of `mydhcp.log` is as follows:
 
 This plug-in is used by [OsecT](https://github.com/nttcom/OsecT).
 
+## Related Work
 
+* [spicy-dhcp](https://github.com/zeek/spicy-dhcp) - Another Spicy-based DHCPv4 plug-in for Zeek.
+
+### Log Difference (DHCPv4-COM vs Zeek Original Log)
+
+| Field | DHCPv4-COM | Zeek Original Log | Description |
+| --- | --- | --- | --- |
+| ts | ◯ | ◯ | timestamp of the communication |
+| SrcIP | ◯ |  ◯ (client_addr) | source IP address |
+| SrcMAC | ◯ | ◯ (mac) | source MAC address |
+| Hostname | ◯ | ◯ (host_name) | name of the host |
+| ParameterList | ◯ | x | configuration information in messages exchanged between DHCP client and DHCP server |
+| ClassId | ◯ | x | device type and version information |
+| uids | x | ◯ | unique identifier assigned to the communication |
+| server_addr | x | ◯ | IP address of the DHCP server |
+| client_fqdn | x | ◯ | fully qualified domain name (FQDN) of the DHCP client |
+| domain | x | ◯ | domain name to which the DHCP client belongs |
+| requested_addr | x | ◯ | IP address requested by the DHCP client |
+| assigned_addr | x | ◯ | IP address assigned to the client by the DHCP server |
+| lease_time | x | ◯ | lease time of the IP address assigned to the DHCP client |
+| client_message | x | ◯ | message from the DHCP client |
+| server_message | x | ◯ | message from the DHCP server |
+| msg_types | x | ◯ | type of the message |
+| duration | x | ◯ | duration of the communication |
