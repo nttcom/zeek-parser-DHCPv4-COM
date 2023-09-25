@@ -46,7 +46,7 @@ spicyc v1.5.0 (d0bc6053)
 
 ### パッケージマネージャーによるインストールの場合
 
-以下の様に本プラグインを使うことで `mydhcp.log` が生成されます。
+以下のように本プラグインを使うことで `mydhcp.log` が生成されます。
 
 ```
 zeek -Cr /usr/local/zeek/var/lib/zkg/clones/package/zeek-parser-DHCPv4-COM/testing/Traces/test.pcap zeek-parser-DHCPv4-COM
