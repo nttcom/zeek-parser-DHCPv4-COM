@@ -8,6 +8,23 @@ Zeek-Parser-DHCPv4-COMとはZeekオリジナルのDHCPv4(Dynamic Host Configurat
 
 ## 使い方
 
+### パッケージマネージャ
+
+このスクリプトは[Zeek Package Manger](https://docs.zeek.org/projects/package-manager/en/stable/index.html)用のパッケージとして提供されています。
+
+```
+zkg refresh
+zkg install zeek-parser-DHCPv4-COM
+```
+
+上記のコマンドを実行した後、本プラグインは利用可能なプラグインに追加されます。
+
+以下の様に本プラグインを使うことで `mydhcp.log` が生成されます。
+
+```
+zeek -Cr /usr/local/zeek/var/lib/zkg/clones/package/zeek-parser-DHCPv4-COM/testing/Traces/test.pcap zeek-parser-DHCPv4-COM
+```
+
 ### マニュアルインストール
 
 本プラグインを利用する前に、Zeek, Spicyがインストールされていることを確認します。
