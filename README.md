@@ -6,7 +6,17 @@ English is [here](https://github.com/nttcom/zeek-parser-DHCPv4-COM/blob/main/REA
 
 Zeek-Parser-DHCPv4-COMとはZeekオリジナルのDHCPv4(Dynamic Host Configuration Protocol for IPv4)プラグインを参考にして作成したプラグインです。
 
-## 使い方
+## インストール
+
+### パッケージマネージャーによるインストール
+
+このプラグインは[Zeek Package Manger](https://docs.zeek.org/projects/package-manager/en/stable/index.html)用のパッケージとして提供されています。
+
+以下のコマンドを実行することで、本プラグインは利用可能になります。
+```
+zkg refresh
+zkg install zeek-parser-DHCPv4-COM
+```
 
 ### マニュアルインストール
 
@@ -31,6 +41,18 @@ spicyc v1.5.0 (d0bc6053)
 ```
 ~$ git clone https://github.com/nttcom/zeek-parser-DHCPv4-COM.git
 ```
+
+## 使い方
+
+### パッケージマネージャーによるインストールの場合
+
+以下のように本プラグインを使うことで `mydhcp.log` が生成されます。
+
+```
+zeek -Cr /usr/local/zeek/var/lib/zkg/clones/package/zeek-parser-DHCPv4-COM/testing/Traces/test.pcap zeek-parser-DHCPv4-COM
+```
+
+### マニュアルインストールの場合
 
 ソースコードをコンパイルして、オブジェクトファイルを以下のパスにコピーします。
 ```
