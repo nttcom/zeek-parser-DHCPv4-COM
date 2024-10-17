@@ -4,6 +4,7 @@ module Zeek_DHCP;
 
 import MYDHCP;
 import zeek;
+import spicy;
 
 on MYDHCP::Message::%done {
     # zeek::confirm_protocol();
@@ -161,7 +162,7 @@ public function create_options(msg: MYDHCP::Message):
             class_identifier = option.class_identifier;
 
         if (option?.user_class)
-            user_class = option.user_class.decode(hilti::Charset::ASCII);
+            user_class = option.user_class.decode(spicy::Charset::ASCII);
     }
 
     return (

@@ -136,13 +136,13 @@ redef record connection += {
 	mydhcp: Info &optional;
 };
 
-const dns_ports= {67/udp, 68/udp};
+const dns_ports = { 67/udp, 68/udp };
 redef likely_server_ports += { 67/udp };
 
 event zeek_init() &priority=5
 	{
 	Log::create_stream(MYDHCP::LOG, [$columns = Info, $ev = log_mydhcp, $path="mydhcp"]);
-	Analyzer::register_for_ports(Analyzer::ANALYZER_SPICY_MYDHCP,dns_ports);
+	Analyzer::register_for_ports(Analyzer::ANALYZER_SPICY_MYDHCP, dns_ports);
 	}
 
 event MYDHCP::message(
